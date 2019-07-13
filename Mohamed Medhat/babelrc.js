@@ -1,6 +1,3 @@
-module.exports ={
-    "presets": [
-        "es2015",
-        "react"
-    ]
-}
+module.exports = {
+  presets: ['es2015', 'react']
+};

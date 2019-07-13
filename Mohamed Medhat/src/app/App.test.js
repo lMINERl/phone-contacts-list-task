@@ -1,8 +1,19 @@
-import { React, ReactDOM } from '../test/Configurations';
+import { React, shallow } from '../test/Configurations';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+import reducers from '../store';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+const myStore = createStore(reducers);
+
+describe('<App />', () => {
+  test('renders', () => {
+    const wrapper = shallow(
+      <Provider store={myStore}>
+        <App />
+      </Provider>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });

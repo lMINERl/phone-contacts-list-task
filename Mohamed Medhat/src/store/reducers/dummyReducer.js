@@ -18,7 +18,7 @@ export default function cartReducer(state = initialState, action = {}) {
     case actionTypes.EDIT:
       break;
     default:
-      console.error(action.payload);
+      // console.log(action.payload);
       break;
   }
   return {

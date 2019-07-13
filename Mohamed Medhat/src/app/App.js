@@ -1,8 +1,13 @@
 import React from 'react';
-import './App.css';
-
-function App() {
-  return <div>app</div>;
-}
+import Search from '../components/Search';
+import CardContactListing from '../containers/CardContactListing';
+const App = () => {
+  return (
+    <div>
+      <Search />
+      <CardContactListing />
+    </div>
+  );
+};
 
 export default App;
