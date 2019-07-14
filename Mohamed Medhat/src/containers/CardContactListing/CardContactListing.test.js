@@ -1,6 +1,6 @@
-import { React, shallow } from '../../test/Configurations';
+import { React, shallow, mount } from '../../test/Configurations';
 import { CardContactListing } from './CardContactListing';
-
+import { Error } from './Error';
 describe('component functionality', () => {
   const props = [
     {
@@ -29,10 +29,9 @@ describe('component functionality', () => {
     expect(recived).toBe(props.length);
   });
 
-  it(`should display "No Contact Found" if no props  or the list is empty `, () => {
+  it(`should display Error Component if no props  or the list is empty `, () => {
     const newProps = [];
     const component = shallow(<CardContactListing contactList={newProps} />);
-    const recived = component.text();
-    expect(recived).toEqual('No Contact Found');
+    expect(component.text()).toEqual('<Error />');
   });
 });

@@ -12,14 +12,9 @@ const CardContact = props => {
 
   return (
     <React.Fragment>
-      <div className="col-md-12 d-flex pt-2 card-contact">
+      <div className="col-md-12 d-flex pt-2 contact-card">
         <div className="w-25">
-          <img
-            src={imgObj}
-            className="w-100"
-            alt="profile img"
-            style={{ borderRadius: `50%` }}
-          />
+          <img src={imgObj} className="w-100 contact-img" alt="profile img" />
         </div>
         <div className="w-100 pl-2">
           {props.data.name}

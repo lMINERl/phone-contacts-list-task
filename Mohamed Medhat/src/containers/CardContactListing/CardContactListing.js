@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CardContact from '../../components/CardContact';
 
+import Error from './Error';
 const mapStateToProps = state => {
   return {
     contactList: state.contacts.filteredList
@@ -12,11 +13,7 @@ const mapStateToProps = state => {
 const CardContactListing = props => {
   // early return if no contacts available
   if (!props.contactList || !props.contactList.length) {
-    return (
-      <React.Fragment>
-        <div className="text-center mt-5">No Contact Found</div>
-      </React.Fragment>
-    );
+    return <Error />;
   }
 
   const List = props.contactList.map(v => {

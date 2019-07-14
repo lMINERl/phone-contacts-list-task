@@ -25,6 +25,30 @@ const data = [
     name: 'jhonson',
     img: 'rnzsme2b.bmp',
     job: 'android developer'
+  },
+  {
+    id: 'E',
+    name: 'jhonson',
+    img: 'rnzsme2b.bmp',
+    job: 'android developer'
+  },
+  {
+    id: 'F',
+    name: 'jhonson',
+    img: '', // empty img to load the default
+    job: 'android developer'
+  },
+  {
+    id: 'G',
+    name: 'jhonson',
+    img: 'rnzsme2b.bmp',
+    job: 'android developer'
+  },
+  {
+    id: 'H',
+    name: 'jhonson',
+    img: 'rasme2b.bmp', // wrong img should load the default
+    job: 'android developer'
   }
 ];
 
@@ -42,7 +66,8 @@ export default function cartReducer(state = initialState, action = {}) {
       break;
     case actionTypes.GET_CONTACTS_BY_NAME:
       {
-        const name = action.payload.toLowerCase();
+        const name = action.payload.toLowerCase().replace(/[^a-z0-9]/gi, '');
+
         newFilteredList = newContactList.filter(
           c => c.name.toLowerCase().search(name) !== -1
         );

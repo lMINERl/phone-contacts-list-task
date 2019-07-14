@@ -10,10 +10,7 @@ const mapDispatchToProps = dispatch =>
 const Search = props => {
   return (
     <div className="container-fluid">
-      <div
-        className="p-3 row d-flex"
-        style={{ backgroundColor: `#7075af`, color: `white` }}
-      >
+      <div className="p-3 row d-flex search-container">
         <div className="col-md-4">
           <i className="fa fa-bars menu"></i>
         </div>
@@ -21,11 +18,7 @@ const Search = props => {
         <div className="col-md-4 "></div>
         <div className="mt-5 w-100 d-flex justify-content-center">
           <div>
-            <i
-              className="position-relative fa fa-search"
-              style={{ left: `12.4rem`, color: `black` }}
-            ></i>
-
+            <i className="position-relative fa fa-search search-icon"></i>
             <input
               placeholder="Search Contacts"
               onChange={e => props.getContactsByName(e.target.value)}
