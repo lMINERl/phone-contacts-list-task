@@ -9,8 +9,16 @@ describe('<CardContact />', () => {
     job: 'android developer'
   };
 
-  it('renders', () => {
+  it('should output the img provided by props', () => {
     const component = shallow(<CardContact data={props} />);
-    expect(true).toBeTruthy();
+    const imgName = component.find('img').prop('src');
+    expect(imgName).toEqual(props.img);
+  });
+  it('should output the default img if img is wrong', () => {
+    const newProps = { ...props };
+    newProps.img = 'RandomString';
+    const component = shallow(<CardContact data={newProps} />);
+    const imgName = component.find('img').prop('src');
+    expect(imgName).toEqual('profile-img.jpg');
   });
 });
