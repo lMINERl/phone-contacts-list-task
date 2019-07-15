@@ -12,13 +12,13 @@ const CardContact = props => {
 
   return (
     <React.Fragment>
-      <div className="col-md-12 d-flex pt-2 contact-card">
-        <div className="w-25">
+      <div className="col-md-12 d-flex pt-4 contact-card">
+        <div className="contact-img-container">
           <img src={imgObj} className="w-100 contact-img" alt="profile img" />
         </div>
-        <div className="w-100 pl-2">
+        <div className="pl-4 w-100 contact-name">
           {props.data.name}
-          <div className="">{props.data.job}</div>
+          <div className="contact-job">{props.data.job}</div>
         </div>
       </div>
       <hr className="w-100" />

@@ -24,7 +24,7 @@ const CardContactListing = props => {
     );
   });
 
-  return <div className="container-fluid">{List}</div>;
+  return <div className="container-fluid contact-container">{List}</div>;
 };
 
 const CardContactListingStore = connect(mapStateToProps)(CardContactListing);

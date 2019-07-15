@@ -1,5 +1,19 @@
-.contact{
-    &-img{
-        border-radius: 50%;
+.contact {
+  &-container {
+    height: 80vh;
+    overflow: auto;
+  }
+  &-img {
+    &-container {
+      width: 10%;
     }
+    border-radius: 50%;
+  }
+  &-name {
+    @include font--writing;
+  }
+  &-job {
+    color: $color-sub1;
+    @include font--writing--sm;
+  }
 }
